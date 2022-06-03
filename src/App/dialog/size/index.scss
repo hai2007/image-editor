@@ -1,0 +1,91 @@
+.view {
+
+    fieldset {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    ul {
+
+        &[lock='yes'] {
+            background-image: url('./image/lock.png');
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        &>li {
+            line-height: 2em;
+            margin-top: 5px;
+
+            &[active='no'] {
+                display: none;
+            }
+
+            &>label {
+                width: 70px;
+                display: inline-block;
+                text-align: right;
+            }
+
+            &>input {
+                width: 50px;
+                margin-right: 5px;
+            }
+
+            .change-type {
+                font-size: 0;
+                width: 90px;
+                display: inline-block;
+                line-height: 0;
+                vertical-align: top;
+                background-image: url('./image/size.png');
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+
+                &>span {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                    outline: 1px solid #dedede;
+                }
+
+                &[type='left-top'] {
+                    background-position: -29px -32px;
+                }
+
+                &[type='center-top'] {
+                    background-position: 1px -32px;
+                }
+
+                &[type='rigth-top'] {
+                    background-position: 30px -32px;
+                }
+
+                &[type='left-middle'] {
+                    background-position: -29px -1px;
+                }
+
+                &[type='center-middle'] {
+                    background-position: 1px -1px;
+                }
+
+                &[type='rigth-middle'] {
+                    background-position: 30px -1px;
+                }
+
+                &[type='left-bottom'] {
+                    background-position: -29px 30px;
+                }
+
+                &[type='center-bottom'] {
+                    background-position: 1px 30px;
+                }
+
+                &[type='rigth-bottom'] {
+                    background-position: 30px 30px;
+                }
+            }
+        }
+    }
+}

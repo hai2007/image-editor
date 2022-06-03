@@ -10,6 +10,14 @@ module.exports = {
 
     // 对导入路径重定向
     redirect: {
-        'nefbl': "./src/lib/nefbl.js"
-    }
+        'nefbl': "./src/lib/nefbl.js",
+        'clunch': "./src/lib/clunch.js",
+        "colors-picker": './src/lib/colors-picker.js'
+    },
+
+    // 配置特殊文件解析loader
+    loader: [{
+        test: /\.clunch$/,
+        handler: ['clunch/loader.js']
+    }]
 };

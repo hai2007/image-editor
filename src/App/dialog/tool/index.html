@@ -1,0 +1,16 @@
+<div class="view">
+    <h2 ui-dragdrop>
+        　工具箱
+    </h2>
+    <ul class="list">
+        <li title="移动工具" class="move" ui-on:click="changeTool" name="move" ui-bind:active="active=='move'?'yes':'no'">
+        </li>
+        <li title="橡皮擦" class="eraser" ui-on:click="changeTool" name="eraser"
+            ui-bind:active="active=='eraser'?'yes':'no'"></li>
+        <!-- <li title="背景橡皮擦" class="eraser-bg" ui-on:click="changeTool" name="eraser-bg" ui-bind:active="active=='eraser-bg'?'yes':'no'"></li> -->
+    </ul>
+    <div class="color">
+        <span id="backcolor" title="背景色"></span>
+        <span id="forecolor" title="前景色"></span>
+    </div>
+</div>

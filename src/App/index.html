@@ -1,5 +1,98 @@
 <a class="fork" href="https://github.com/hai2007/image-editor" target="_blank">Fork Me on Github</a>
 
-<div style="line-height:100px;text-align:center;color:red;font-size: 20px;">
-    开发中，敬请期待！
+<div class="no-view">
+
+    <!-- 选择图片 -->
+    <input type="file" id="img-file1" flag="import" ui-on:change="importImage" accept="image/*" />
+    <input type="file" id="img-file2" flag="append" ui-on:change="importImage" accept="image/*" />
+
 </div>
+
+<!-- 菜单 -->
+<div class="menu">
+
+    <h2>在线H5图片编辑器</h2>
+
+    <ul>
+        <li>
+            <label>文件</label>
+            <ul>
+                <li>
+                    <label for="img-file1">打开</label>
+                </li>
+                <li>
+                    <label ui-on:click="exportImage">保存</label>
+                </li>
+                <li>
+                    <label for="img-file2">置入</label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <label>图像</label>
+            <ul>
+                <li>
+                    <label ui-on:click="editCanvasSize">画布大小</label>
+                </li>
+                <li>
+                    <label ui-on:click="editImageSize">图像大小</label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <label>窗口</label>
+            <ul>
+                <li>
+                    <label ui-on:click="toggleWin" name="layer">
+                        图层
+                    </label>
+                </li>
+                <li>
+                    <label ui-on:click="toggleWin" name="tool">
+                        工具箱
+                    </label>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+<!-- 工具配置 -->
+<div class="tool-config">
+
+    <!-- 移动 -->
+    <ul ui-bind:active="activeTool=='move'?'yes':'no'">
+        <li>
+            移动距离：
+            <input type="text" ui-model="move_size">
+        </li>
+    </ul>
+
+    <!-- 橡皮擦 -->
+    <ul ui-bind:active="activeTool=='eraser'?'yes':'no'">
+        <li>
+            大小：
+            <input type="text" ui-model="eraser_size">
+        </li>
+    </ul>
+
+    <!-- 背景橡皮擦 -->
+    <ul ui-bind:active="activeTool=='eraser-bg'?'yes':'no'">
+        <li>
+            大小：
+            <input type="text" ui-model="eraser_bg_size">
+        </li>
+    </ul>
+
+</div>
+
+<!-- 画布 -->
+<div class="image">
+    <div id="image-root"
+        ui-bind:style="'width:'+width+'px;height:'+height+'px;margin-top:'+marginTop+';margin-left:'+marginLeft+';'">
+    </div>
+</div>
+
+<!-- 弹框 -->
+<ul id="dialog" class="win-frame"></ul>

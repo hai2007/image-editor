@@ -1,17 +1,65 @@
-.table-frame {
-    width: 100%;
-    font-size: 14px;
-    margin-top: 30px;
-
-    thead {
-        background-color: #b2b2bd;
+.win-frame {
+    .gray-view {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(234, 230, 230, 0.67);
     }
 
-    th {
-        padding: 10px;
-    }
+    .view {
+        position: fixed;
+        left: calc(50vw - 150px);
+        top: 100px;
+        border: 1px solid gray;
+        min-height: 300px;
+        width: 300px;
+        background-color: white;
 
-    tbody {
-        border: 1px solid #b2b2bd;
+        &>h2 {
+            font-size: 12px;
+            padding-left: 30px;
+            background-image: url('./image/image.png');
+            background-size: auto 80%;
+            background-repeat: no-repeat;
+            background-position: 3px center;
+            border-bottom: 1px solid gray;
+            line-height: 30px;
+            height: 30px;
+            user-select: none;
+            cursor: move;
+        }
+
+        &>div.right-btn {
+            display: flex;
+
+            &>div {
+                &:first-child {
+                    flex-grow: 1;
+                    padding: 10px 0 10px 10px;
+                }
+
+                &:last-child {
+                    text-align: center;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: 70px;
+
+                    &>button {
+                        height: 30px;
+                        border-radius: 15px;
+                        width: 50px;
+                        margin-top: 10px;
+
+                        &:hover {
+                            background-color: rgb(127, 131, 131);
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+            }
+        }
     }
 }

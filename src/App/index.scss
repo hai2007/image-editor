@@ -14,4 +14,130 @@
     outline: 4px solid #bac7cd;
     border: 2px dashed #ffffff;
     color: #ffffff;
+    z-index: 10;
+}
+
+.no-view {
+    display: none;
+}
+
+.menu {
+
+    border-bottom: 1px solid gray;
+    position: fixed;
+    z-index: 7;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    &>h2,
+    ul {
+        vertical-align: top;
+    }
+
+    &>h2 {
+        font-size: 0;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url('./image/image.png');
+        background-size: auto 80%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &>ul {
+        display: inline-block;
+        line-height: 30px;
+        font-size: 12px;
+
+        label {
+            cursor: pointer;
+            padding: 0 5px;
+            display: block;
+
+            &>span {
+                float: right;
+            }
+        }
+
+        li {
+            &:hover {
+                background-color: #cfd3d5;
+
+                &>ul {
+                    display: block;
+                }
+            }
+        }
+
+        ul {
+            display: none;
+        }
+
+        &>li {
+            display: inline-block;
+            margin-left: 10px;
+            position: relative;
+
+            &>ul {
+                position: absolute;
+                border: 1px solid gray;
+                border-radius: 5px;
+                width: 100px;
+                top: 25px;
+                left: -5px;
+                background-color: white;
+                padding: 5px 0;
+            }
+        }
+
+    }
+}
+
+.tool-config {
+    border-bottom: 1px solid #ccc;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    top: 30px;
+    width: 100vw;
+    font-size: 12px;
+
+    &>ul {
+        display: none;
+
+        &[active='yes'] {
+            display: block;
+        }
+
+        &>li {
+            padding: 0 5px;
+
+            &>input {
+                width: 50px;
+            }
+        }
+    }
+}
+
+.image {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    position: relative;
+    top: 80px;
+
+    &>div {
+        position: absolute;
+        outline: 1px solid #ccc;
+        cursor: none;
+    }
+}
+
+#dialog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 6;
 }

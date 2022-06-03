@@ -1,0 +1,16 @@
+<!-- 马赛克 -->
+
+<ui-mosaic c-if="mosaic" />
+
+<!-- 图层 -->
+
+<group c-for='layer in layers'>
+
+    <!-- 图片 -->
+    <ui-picture c-if='layer.type=="picture"' :image='layer.image' :left='layer.left' :top='layer.top'
+        :width='layer.width' :height='layer.height' />
+
+</group>
+
+<!-- 鼠标提示 -->
+<ui-cursor c-if="mosaic" :left="cursor.left" :top="cursor.top" :type="cursor.type" :params="cursor.params" />

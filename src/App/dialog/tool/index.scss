@@ -1,0 +1,64 @@
+.view {
+    width: 82px;
+    left: 50px;
+
+    &>.list {
+        &>li {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            outline: 1px solid rgb(185, 182, 182);
+            font-size: 0;
+            vertical-align: top;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+
+            &[active='yes'] {
+                background-color: #e6e1e1;
+            }
+
+            &.move {
+                background-image: url('./image/move.png');
+            }
+
+            &.eraser {
+                background-image: url('./image/eraser.png');
+            }
+
+            &.eraser-bg {
+                background-image: url('./image/eraser-bg.png');
+            }
+
+        }
+    }
+
+    &>.color {
+        height: 40px;
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+
+        &>span {
+            position: absolute;
+            display: inline-block;
+            outline: 1px solid rgb(201, 201, 202);
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+
+            &#forecolor {
+                left: 15px;
+                top: 0;
+                background-color: white;
+            }
+
+            &#backcolor {
+                left: 35px;
+                top: 10px;
+                background-color: black;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.view {
+    width: 160px;
+    left: calc(100vw - 210px);
+
+    &>.list {
+        &>li {
+            font-size: 12px;
+            border-bottom: 1px solid rgb(193, 190, 190);
+            line-height: 30px;
+
+            &[active='yes'] {
+                background-color: #cdc7c7;
+            }
+
+            &>span {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                font-size: 0;
+                vertical-align: top;
+                background-image: url('./image/image.png');
+                background-size: 100% auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+                margin: 5px;
+                outline: 1px solid rgb(181, 178, 178);
+            }
+
+            &>input {
+                width: 100px;
+                border: none;
+                outline: none;
+                background-color: #f2f2f2;
+                line-height: 20px;
+                font-size: 12px;
+            }
+        }
+    }
+}
