@@ -324,8 +324,15 @@ export default class {
         clunch.mosaic = false
 
         setTimeout(() => {
+
+            let canvas = document.createElement('canvas')
+            canvas.setAttribute('width', clunch._width)
+            canvas.setAttribute('height', clunch._height)
+
+            canvas.getContext('2d').drawImage(clunch.__canvas, 0, 0, clunch._width * 2, clunch._height * 2, 0, 0, clunch._width, clunch._height)
+
             let btn = document.createElement('a')
-            btn.href = clunch.__canvas.toDataURL('image/png')
+            btn.href = canvas.toDataURL('image/png')
             btn.download = "default.png"
             btn.click()
 

@@ -1,6 +1,6 @@
 {
   "name": "image-editor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "在线H5图片编辑器",
   "scripts": {
     "build": "nodejs -e build && pack_pkg --config pack.prod.js",
